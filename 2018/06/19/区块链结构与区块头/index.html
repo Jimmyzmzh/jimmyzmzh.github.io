@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="BlockSafe Lab.">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://bcsafe.net">
+    <!--SEO-->
+
+<meta name="description" content="һ��ѧϰ����ĥ����������"/>
+
+
+
+<meta name="keywords" content="�����������˼����ʲ�����ȫ"/>
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>区块链结构与区块头 | BlockSafe Lab.</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="BlockSafe Lab." type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='BlockSafe'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 区块链学习小栈 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/学习日志/"><i class="fa "></i>学习日志</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术文章/"><i class="fa "></i>技术文章</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/链海导航/"><i class="fa "></i>链海导航</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/tags/"><i class="fa "></i>标签</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="区块链结构与区块头">
+            
+	            区块链结构与区块头
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术文章">
+            技术文章
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/区块链，区块头，链式结构，梅克尔树，哈希函数" title='区块链，区块头，链式结构，梅克尔树，哈希函数'>
+                        区块链，区块头，链式结构，梅克尔树，哈希函数
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/06/19</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="区块链（blockchain）的本质"><a href="#区块链（blockchain）的本质" class="headerlink" title="区块链（blockchain）的本质"></a>区块链（blockchain）的本质</h1><p>首先，区块链的主要作用是储存信息。任何需要保存的信息，都可以写入区块链，也可以从里面读取，所以它是数据库。</p>
+<p>其次，任何人都可以架设服务器，加入区块链网络，成为一个节点。区块链的世界里面，没有中心节点，每个节点都是平等的，都保存着整个数据库。你可以向任何一个节点，写入/读取数据，因为所有节点最后都会同步，保证区块链一致.</p>
+<h1 id="区块链没有管理员，它是彻底无中心的。"><a href="#区块链没有管理员，它是彻底无中心的。" class="headerlink" title="区块链没有管理员，它是彻底无中心的。"></a>区块链没有管理员，它是彻底无中心的。</h1><p>区块链没有管理员，它是彻底无中心的。其他的数据库都有管理员，但是区块链没有。如果有人想对区块链添加审核，也实现不了，因为它的设计目标就是防止出现居于中心地位的管理当局。</p>
+<p>正是因为无法管理，区块链才能做到无法被控制。否则一旦大公司大集团控制了管理权，他们就会控制整个平台，其他使用者就都必须听命于他们了。</p>
+<p>但是，没有了管理员，人人都可以往里面写入数据，怎么才能保证数据是可信的呢？被坏人改了怎么办？请接着往下读，这就是区块链奇妙的地方。</p>
+<h1 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h1><p>区块链由一个个区块（block）组成。区块很像数据库的记录，每次写入数据，就是创建一个区块。</p>
+<p>每个区块包含两个部分。</p>
+<p>区块头（Head）：记录当前区块的元信息区块体（Body）：实际数据</p>
+<p>区块头包含了当前区块的多项元信息。</p>
+<p>生成时间实际数据（即区块体）的 Hash上一个区块的 Hash…</p>
+<p>所谓 Hash 就是计算机可以对任意内容，计算出一个长度相同的特征值。区块链的 Hash 长度是256位，这就是说，不管原始内容是什么，最后都会计算出一个256位的二进制数字。而且可以保证，只要原始内容不同，对应的 Hash 一定是不同的。</p>
+<p>举例来说，字符串123的 Hash 是a8fdc205a9f19cc1c7507a60c4f01b13d11d7fd0（十六进制），转成二进制就是256位，而且只有123能得到这个 Hash。</p>
+<p>因此，就有两个重要的推论。</p>
+<p>推论1：每个区块的 Hash 都是不一样的，可以通过 Hash 标识区块。推论2：如果区块的内容变了，它的 Hash 一定会改变。</p>
+<h1 id="Hash-的不可修改性"><a href="#Hash-的不可修改性" class="headerlink" title="Hash 的不可修改性"></a>Hash 的不可修改性</h1><p>区块与 Hash 是一一对应的，每个区块的 Hash 都是针对”区块头”（Head）计算的。</p>
+<p>Hash = SHA256(区块头)</p>
+<p>上面就是区块 Hash 的计算公式，Hash 由区块头唯一决定，SHA256是区块链的 Hash 算法。</p>
+<p>前面说过，区块头包含很多内容，其中有当前区块体的 Hash（注意是”区块体”的 Hash，而不是整个区块），还有上一个区块的 Hash。这意味着，如果当前区块的内容变了，或者上一个区块的 Hash 变了，一定会引起当前区块的 Hash 改变。</p>
+<p>这一点对区块链有重大意义。如果有人修改了一个区块，该区块的 Hash 就变了。为了让后面的区块还能连到它，该人必须同时修改后面所有的区块，否则被改掉的区块就脱离区块链了。由于后面要提到的原因，Hash 的计算很耗时，同时修改多个区块几乎不可能发生，除非有人掌握了全网51%以上的计算能力。</p>
+<p>正是通过这种联动机制，区块链保证了自身的可靠性，数据一旦写入，就无法被篡改。这就像历史一样，发生了就是发生了，从此再无法改变。</p>
+<p>每个区块都连着上一个区块，这也是”区块链”这个名字的由来。</p>
+<h1 id="区块头与梅克尔-Merkle-树"><a href="#区块头与梅克尔-Merkle-树" class="headerlink" title="区块头与梅克尔(Merkle)树"></a>区块头与梅克尔(Merkle)树</h1><p>我们来看看一个区块结构到底是怎样的：</p>
+<p>如上图（下文称：区块结构图）所示：每个数据区块包含区块头和区块体。</p>
+<p>区块头封装了当前版本号、前一区块哈希值、当前区块PoW要求的随机数(Nonce)、时间戳、以及Merkle根信息。</p>
+<p>区块体则包括当前区块经过验证的、 区块创建过程中生成的所有交易记录。这些记录通过 Merkle树的哈希过程生成唯一的Merkle根并记入区块头.</p>
+<p>区块哈希值实际上并不包含在区块的数据结构里，其实区块打包时只有区块头被用于计算哈希（从网络被接收时由每个节点计算出来），常说的区块哈希值实际是区块头哈希值，它可以用来唯一、明确地标识一个区块。</p>
+<p>区块头是80字节，而平均每个交易至少是250字节，而且平均每个区块包含2000个交易。因此，包含完整交易的区块比区块头的4千倍还要大。</p>
+<p>Merkle树是一种哈希二叉树，它的明显的一个好处是可以单独拿出一个分支来（作为一个小树）对部分数据进行校验，更加高效。</p>
+<p>我们回看下上面的区块结构图，区块体就包含这样一个Merkle树,Merkle树被用来归纳一个区块中的所有交易。</p>
+<p>每个叶子节点是每个交易信息的哈希，往上对相邻的两个哈希合并成字符串再哈希，继续类似的操作直到只剩下顶部的一个节点，即Merkle根，存入区块头。</p>
+<p>因为Merkle树是二叉树，所以它需要偶数个叶子节点。如果仅有奇数个交易需要归纳，那最后的交易就会被复制一份以构成偶数个叶子节点，这种偶数个叶子节点的树也被称为平衡树。</p>
+<h1 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h1><p>由于必须保证节点之间的同步，所以新区块的添加速度不能太快。试想一下，你刚刚同步了一个区块，准备基于它生成下一个区块，但这时别的节点又有新区块生成，你不得不放弃做了一半的计算，再次去同步。因为每个区块的后面，只能跟着一个区块，你永远只能在最新区块的后面，生成下一个区块。所以，你别无选择，一听到信号，就必须立刻同步。</p>
+<p>所以，区块链的发明者中本聪（这是假名，真实身份至今未知）故意让添加新区块，变得很困难。他的设计是，平均每10分钟，全网才能生成一个新区块，一小时也就六个。</p>
+<p>这种产出速度不是通过命令达成的，而是故意设置了海量的计算。也就是说，只有通过极其大量的计算，才能得到当前区块的有效 Hash，从而把新区块添加到区块链。由于计算量太大，所以快不起来。</p>
+<p>这个过程就叫做采矿（mining），因为计算有效 Hash 的难度，好比在全世界的沙子里面，找到一粒符合条件的沙子。计算 Hash 的机器就叫做矿机，操作矿机的人就叫做矿工。</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">BlockSafe Lab. </a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/06/18/ICO/" class="next-post btn btn-default" title='ICO'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">ICO</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzM5Ni8xMzkzMA">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ICO为何能快速融资？"><span class="toc-text">ICO为何能快速融资？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#企业可以用ICO代替IPO吗？"><span class="toc-text">企业可以用ICO代替IPO吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#个人可以投ICO赚钱吗？"><span class="toc-text">个人可以投ICO赚钱吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ICO未来如何发展？"><span class="toc-text">ICO未来如何发展？</span></a></li></ol>
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<!--<a id="toc-btn">
+    <i class="fa fa-bars"></i>
+</a>-->
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017 BlockSafe Lab. All Rights Reserved.
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/js/search.js?rev=@@hash"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
