@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="BlockCamp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://blockcamp.net">
+    <!--SEO-->
+
+<meta name="description" content="һ��ѧϰ����ĥ����������"/>
+
+
+
+<meta name="keywords" content="�����������˼����ʲ�����ȫ"/>
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>比特币背后的密码学原理 | BlockCamp</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="BlockCamp" type="application/atom+xml">
+
+
+    <link rel="icon" href="/logo01.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='BlockSafe Lab'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 区块链学习小栈 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/学习园地/"><i class="fa "></i>学习园地</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术文章/"><i class="fa "></i>技术文章</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/链海导航/"><i class="fa "></i>链海导航</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/下载区/"><i class="fa "></i>下载区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="比特币背后的密码学原理">
+            
+	            比特币背后的密码学原理
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/哈希函数" title='哈希函数'>
+                        哈希函数
+                    </a>
+                
+                    <a href="/tags/密码学" title='密码学'>
+                        密码学
+                    </a>
+                
+                    <a href="/tags/Hash" title='Hash'>
+                        Hash
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/06/26</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>货币由于其天然属性决定了其与安全不可分割的联系，从最早的金库、保险柜、镖局到后来的ATM机、运钞车；从存折到银行卡，从口令卡到优盾，安全技术的进步一步步推动着金融防护领域的更新。<br>传统的货币的安全需求，密码学是安全手段，是从“可用”到“安心用”的升级。而对比特币来说，密码学本身就是比特币体系的一部分，没有密码学支撑的比特币体系会完全崩塌，彻底“不可用”。本质上来说，比特币和密码学是融为一体的，比特币是自带安全属性的数字货币。因此，对比特币用户来说，了解比特币背后的密码学理论，有助于更好的理解比特币；同时，通过密码学理论的分享，也可以顺便感受一下人类智慧的伟大。毕竟，在我眼里，密码学理论是大量聪慧的头脑审慎思考的结果，精致而又巧妙之处比比皆是。</p>
+<h1 id="一、密码学理论"><a href="#一、密码学理论" class="headerlink" title="一、密码学理论"></a>一、密码学理论</h1><p>比特币本身并没有创造新的密码学成果，但比特币利用现有密码学成果构建了一个令人惊奇的全新的数字货币世界：去中心化、区块链、可编程货币等成果即使抛开比特币本身而言也是值得赞赏的洞见。<br>首先，现代密码学理论的共识遵循“柯克霍夫原则”：<br>柯克霍夫原则由奥古斯特·柯克霍夫在19世纪提出：密码系统应该就算被所有人知道系统的运作步骤，仍然是安全的。<br>这个是什么意思呢，拿钥匙和锁的例子来说，研制和生产锁具（包括钥匙）的工艺是完全公开的，锁具被攻破只有两种可能：一是证明工艺有漏洞，不需要拿到原装钥匙也能打开。二是穷尽各种钥匙可能，在可接受的时间里能够从概率意义上试出来（暴力破解）。<br>算法是公开的，唯一需要保护的是密钥，这是我们下文讨论的基础。</p>
+<h2 id="1-非对称加密"><a href="#1-非对称加密" class="headerlink" title="1.非对称加密"></a>1.非对称加密</h2><p>先看对称加密很好理解也符合直觉：<br>对称加密：对同一份敏感数据，加密解密密钥是相同的。<br>非对称加密呢：<br>非对称加密算法需要两个密钥：公开密钥（publickey）和私有密钥（privatekey）。公开密钥与私有密钥是一对，如果用公开密钥对数据进行加密，只有用对应的私有密钥才能解密；如果用私有密钥对数据进行加密，那么只有用对应的公开密钥才能解密。因为加密和解密使用的是两个不同的密钥，所以这种算法叫作非对称加密算法。 非对称加密算法实现机密信息交换的基本过程是：甲方生成一对密钥并将其中的一把作为公用密钥向其它方公开；得到该公用密钥的乙方使用该密钥对机密信息进行加密后再发送给甲方；甲方再用自己保存的另一把专用密钥对加密后的信息进行解密。<br>我们用一幅图来说明：<br><img src="http://pawrksyv1.bkt.clouddn.com/hash001.jpeg" alt=""></p>
+<p>在上文的非对称加密部分，密钥A就是公开密钥（简称公钥），密钥B就是私有密钥（简称私钥）。道理都懂，问题有意思在什么地方呢？非对称加密方式下密钥A和密钥B是怎么找到的以及怎么实现的？我们举例说明：<br>假设我们现在已经找到了（具体怎么找的后面会讲）公钥（3233,17）和私钥(3233, 2753)。<br>注意，公钥和私钥不一定只有一个数字，是可以有多个的，具体几个数字依赖于非对称加密算法。<br>假设现在明文待加密信息是数字65，我们首先给出加密公式：</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash002.png" alt=""></p>
+<p>解释一下，c代表加密后数字，（n，e）对应我们的公钥对，m代表明文，≡的意思是同模运算，比如60≡4（mod 7）,60对4取模后等于4。好了我们开始计算密文：</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash003.png" alt=""></p>
+<p>密文是2790，如何解密呢，解密公式：</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash004.png" alt=""></p>
+<p>d对应私钥的2753，其余字母和加密过程相同，于是解密运算为：</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash005.png" alt=""></p>
+<p>我们得到了原来的明文数据65，这个例子可以看到加密和解密数据是不同的。<br>以上我们举例使用的算法是大名鼎鼎的地球主流非对称加密算法RSA，有关RSA的介绍参考阮一峰老师的文章。实际上我上面用到的数字也出自该文，实在是时间有限无法深入讲解RSA的细节大家可以自行学习。比特币体系实际使用的非对称算法是椭圆曲线加密（ECC），可以到这里详细了解。<br>从上面的例子我们知道满足非对称加密的密钥对是存在的，同时我们也做了加解密尝试。实际上，非对称加密算法的核心依赖于特定的数学难题，比如上文的RSA依赖于大数分解难题，如果该难题被破解了，算法本身也就被攻破了。另外，我读研的时候还做了RSA矩阵扩展，将其算法基础从素数扩展到矩阵，有兴趣的可以继续交流。<br>非对称算法通过公私鈅分别加解密方式给信息交换带来了巨大的变化，具体表现在：<br>1）在不安全的环境中传递敏感信息成为可能。从上文可以知道，公钥是完全公开任意传播的，通过公钥是无法（或极其困难）推算出私钥的，私钥是不公开不发送不传播的，仅仅消息接收方知道就可以，其他任何人都不需要知道。<br>2）多方通信所需密钥数量急剧减少，密钥维护工作变得异常简化。比如N个互不信任且互有通信需求的人，如果使用对称加密算法，则需要N！/2个密钥，如果使用非对称加密仅需要N个即可（每个人只需要维护自己的公私鈅对，无论和多少人通信）。<br>3）基于非对称加密发展起来的数字签名技术（见下文详述）从数学意义上解决了自证身份问题，使得信息接收者可以确认消息发送方身份信息且不可更改。<br>4）密码学问题对数学问题的依赖空前提高。之前看似无用的甚至古老的数学难题比如数论、离散对数等在此大放异彩，颇有些笑来老师在《把时间当做朋友》里面表达的”技不压身”的现实映射。</p>
+<h2 id="2-散列（哈希）算法"><a href="#2-散列（哈希）算法" class="headerlink" title="2.散列（哈希）算法"></a>2.散列（哈希）算法</h2><p>我们使用各种云盘、虚拟存储空间应用的时候一定都有类似的体会，上传一个明明很大的文件，可是速度却非常快，而有时上传一个小得多的文件却似乎进度条要走很久。这种现象的可能的一个秘密就是接下来要讲的散列算法（也叫数据摘要或者哈希算法，哈希是HASH的音译）。<br>实际上，云盘类产品对相同文件只会保留一份真实的存储，多个使用相同文件的用户只需“索引”到该存储位置即可。判断两个文件是否相同用到的就是散列算法：<br>散列算法将任意长度的二进制值映射为较短的固定长度的二进制值，这个小的二进制值称为哈希值。哈希值是一段数据唯一且极其紧凑的数值表示形式。如果散列一段明文而且哪怕只更改该段落的一个字母，随后的散列值都将产生不同的值。要找到散列为同一个值的两个不同的输入，在计算上是不可能的，所以数据的散列值可以检验数据的完整性。一般用于快速查找和加密算法。<br>本质上，散列算法的目的不是为了“加密”而是为了抽取“数据特征”，你也可以把给定数据的散列值理解为该数据的“指纹信息”，一个可靠的散列算法F需要满足：</p>
+<ol>
+<li>对于给定的数据M，很容易算出哈希值X=F（M）；</li>
+<li>根据X无法算出M；</li>
+<li>很难找到M和N令F（M）=F（N）。<br>我来解释一下：<br>对于第一点，通常哈希值的长度是固定的（为什么固定，一个很重要的原因是便于构造通信包结构，散列的应用场景通常是不可靠的网络传输而非本地存储），比如比特币使用的SHA256摘要算法对任意长度的输入给出的是256bit的输出。<br>对于第二点，散列算法是不可逆的，甚至是以丢失部分原始信息作为代价，因此我个人认为散列加密算法的提法是有问题的，加密意味着可以解密，单纯的扰乱称为加密并不合适。也许所谓的散列加密是和散列校验对应的，也就说两种应用的场景不同，散列加密的核心是扰乱，散列校验的核心是校验。<br>对于第三点，这是散列函数真正的挑战。假设找到了一对（M,N）使得等式成立就成为该算法找到了一次碰撞，对散列算法健壮性的分析就是分析其抗强碰撞能力。可以理解的是，碰撞的出现将使得散列算法本身存在的意义消失了，因为发现了不同的人拥有相同的指纹。<br>比特币使用的散列算法是SHA256，他是安全散列算法SHA（Secure Hash Algorithm）系列算法的一种（另外还有SHA-1、SHA-224、SHA-384 和 SHA-512 等变体），SHA是美国国家安全局 （NSA） 设计，美国国家标准与技术研究院（NIST） 发布的，主要适用于数字签名标准（DigitalSignature Standard DSS）里面定义的数字签名算法（Digital Signature Algorithm DSA）。可以到这里详细了解。<br>最后，我要解释一下二次散列问题，看过比特币协议的读者可能注意到工作量证明和密钥编码过程中多次使用了二次哈希，如SHA256（SHA256（k））或者RIPEMD160(SHA256(K))，这种方式带来的好处是增加了工作量或者在不清楚协议的情况下增加破解难度，从安全性角度并没有显著增加（如果是暴力穷举破解的话，需要增加一倍破解时间）。真正的二次哈希是基于加盐的哈希，什么意思呢？对于特定的待散列数据和特定的散列算法，可以知道散列值是一定的，这种情况下如果用散列保护敏感数据（理论上是不合适的，但是国内外存在大量的使用散列来保护用户密码的情况），那就很容易使用字典攻击反向推算，比如我计算123456的SHA256值就可以反推了，解决办法就是先做一次散列，再加一次随机数据以后再做一次散列，随机数据就是所谓的盐。<h2 id="3-数字签名"><a href="#3-数字签名" class="headerlink" title="3.数字签名"></a>3.数字签名</h2>有了非对称加密和散列算法的准备，我们现在可以进一步认识数字签名了。顾名思义，数字签名就是在数字世界里用于身份辨识的一种解决方案。不需要骑缝章，骑缝签名，也不需要笔迹专家，数字签名即具有不可抵赖性。<br>简单地说,所谓数字签名就是附加在数据单元上的一些数据,或是对数据单元所作的密码变换。这种数据或变换允许数据单元的接收者用以确认数据单元的来源和数据单元的完整性并保护数据,防止被人(例如接收者)进行伪造。它是对电子形式的消息进行签名的一种方法,一个签名消息能在一个通信网络中传输。基于公钥密码体制和私钥密码体制都可以获得数字签名,主要是基于公钥密码体制的数字签名。<br>上述解释稍显学术，我们换种说法表述：所谓数字签名就是签名人用自己的私钥对待签名数据的摘要进行加密得到的值就是签名值。签名者发送数据签名时需要把待签名数据和签名值一起发送给对方。<br>注意，签名对象并非待签名数据而是待签名数据的摘要，为什么呢？因为非对称加密的速度通常都比较慢，直接对原始数据私钥加密是很慢的而且也没有必要。<br>如何验证签名呢？接收方首先使用签名者的公钥对签名值解密即可得到摘要值，然后使用约定的算法对待签名数据进行散列运算后和解密得到的摘要值进行比较即可验证。<br>这里有一个图形化的数字签名过程有助于理解数字签名的整个过程。<br>从以上数字签名的整个过程描述来看，数字签名的核心在于签名，在于证明这份数据是签名者发出的、不可抵赖的。待签名数据本身的保密不是数字签名方案要考虑的问题。<h2 id="4-可读性编码"><a href="#4-可读性编码" class="headerlink" title="4.可读性编码"></a>4.可读性编码</h2>严格来讲，编码部分不是密码学理论的核心内容，不过为了便于下文能说清楚，我就把可读性编码放到这里简单说说。<br>可读性编码很好理解，就是不改变信息内容仅改变内容的表现形式，部分编码方式还加入了容错校验功能，通常是为了保证更好的通信传输。<br>比如二进制的1111对应十进制的15这就是一次编码。是用十进制对二进制进行编码，现在有个问题，我拿到一个编码后的数据，如何知道该数据是使用了哪种形式的编码呢？这个是通过前缀来实现的，例如，比特币地址的前缀是0（十六进制是0x00），而对私钥编码时前缀是128（十六进制是0x80）。<h1 id="二、比特币实践"><a href="#二、比特币实践" class="headerlink" title="二、比特币实践"></a>二、比特币实践</h1>从现在开始，我们开始真刀实枪了，先看看比特币的编码世界。<h2 id="1-Base58和Base58Check编码"><a href="#1-Base58和Base58Check编码" class="headerlink" title="1.Base58和Base58Check编码"></a>1.Base58和Base58Check编码</h2>这里请允许我拿来主义，我觉得王秒等多位老师翻译的Andreas M. Antonopoulos所著《精通比特币》对这个问题已经解释的很清楚了，更详细的描述还可以看看这里。<br>为了更简洁方便地表示长串的数字，许多计算机系统会使用一种以数字和字母组成的大于十进制的表示法。例如，传统的十进制计数系统使用0-9十个数字，而十六进制系统使用了额外的 A-F 六个字母。一个同样的数字，它的十六进制表示就会比十进制表示更短。更进一步，Base64使用了26个小写字母、26个大写字母、10个数字以及两个符号（例如“+”和“/”），用于在电子邮件这样的基于文本的媒介中传输二进制数据。Base64通常用于编码邮件中的附件。Base58是一种基于文本的二进制编码格式，用在比特币和其它的加密货币中。这种编码格式不仅实现了数据压缩，保持了易读性，还具有错误诊断功能。Base58是Base64编码格式的子集，同样使用大小写字母和10个数字，但舍弃了一些容易错读和在特定字体中容易混淆的字符。具体地，Base58不含Base64中的0（数字0）、O（大写字母o）、l（小写字母L）、I（大写字母i），以及“+”和“/”两个字符。简而言之，Base58就是由不包括（0，O，l，I）的大小写字母和数字组成。<br>需要注意的是，Base58编码是不含校验信息的，Base58Check是一种常用在比特币中的Base58编码格式，增加了错误校验码来检查数据在转录中出现的错误。校验码长4个字节，添加到需要编码的数据之后。<br>为了使用Base58Check编码格式对数据（数字）进行编码，首先我们要对数据添加一个称作“版本字节”的前缀，这个前缀用来明确需要编码的数据的类型。例如，比特币地址的前缀是0（十六进制是0x00），而对私钥编码时前缀是128（十六进制是0x80）。 表4-1会列出一些常见版本的前缀。<br>接下来，我们计算“双哈希”校验码，意味着要对之前的结果（前缀和数据）运行两次SHA256哈希算法：<br>checksum = SHA256(SHA256(prefix+data))<br>在产生的长32个字节的哈希值（两次哈希运算）中，我们只取前4个字节。这4个字节就作为校验码。校验码会添加到数据之后。结果由三部分组成：前缀、数据和校验码。<h2 id="2-密钥、地址与钱包"><a href="#2-密钥、地址与钱包" class="headerlink" title="2.密钥、地址与钱包"></a>2.密钥、地址与钱包</h2>先说结论：<br>1.密钥通常指的是保护比特币资产的对应于所有权用户的私钥，个别时候也会模糊的统称私钥和公钥为密钥，这里我们以狭义的私钥解释为准。<br>2.地址大部分情况下是指对公钥的封装（个别时候除了公钥还有脚本）。<br>3.钱包是私钥的容器，通常通过有序文件或者简单的数据库实现。比特币钱包包含私钥和公钥数据，尽管公钥数据理论是是不需要存储的。<h3 id="2-1私钥保护"><a href="#2-1私钥保护" class="headerlink" title="2.1私钥保护"></a>2.1私钥保护</h3>私钥必须保密。私钥的机密性需求事实情况是，在实践中相当难以实现，因为该需求与同样重要的安全对象可用性相互矛盾。当你需要为了避免私钥丢失而存储备份时，会发现维护私钥私密性是一件相当困难的事情。通过密码加密内有私钥的钱包可能要安全一点，但那个钱包也需要备份。有时，例如用户因为要升级或重装钱包软件，而需要把密钥从一个钱包转移到另一个。私钥备份也可能需要存储在纸张上（参见“4.5.4 纸钱包”一节）或者外部存储介质里，比如U盘。但如果一旦备份文件失窃或丢失呢？这些矛盾的安全目标推进了便携、方便、可以被众多不同钱包和比特币客户端理解的加密私钥标准BIP0038的出台。<br>BIP0038提出了一个通用标准，使用一个口令加密私钥并使用Base58Check对加密的私钥进行编码，这样加密的私钥就可以安全地保存在备份介质里，安全地在钱包间传输，保持密钥在任何可能被暴露情况下的安全性。这个加密标准使用了AES，这个标准由NIST建立，并广泛应用于商业和军事应用的数据加密。</li>
+</ol>
+<h3 id="2-2公钥与地址"><a href="#2-2公钥与地址" class="headerlink" title="2.2公钥与地址"></a>2.2公钥与地址</h3><p>我们知道比特币协议的区块链实际上是对交易的维护而不是对账户的维护，交易数据本身并不需要私钥，因此对公钥的封装也就是地址就显得格外重要，需要兼顾安全，效率和扩展。<br>从公钥到地址经历了如下过程：</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash006.png" alt=""></p>
+<p>A = RIPEMD160(SHA256(K))<br>公式中，K是公钥，A是生成的比特币地址。比特币地址与公钥不同。比特币地址是由公钥经过单向的哈希函数生成的<br>以公钥 K 为输入，计算其SHA256哈希值，并以此结果计算RIPEMD160 哈希值，得到一个长度为160比特（20字节）的数字后进行Base58Check编码即可得到比特币地址。从编码数据结构的视角看，是下图：</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash007.png" alt=""></p>
+<p>需要注意的是，从地址已经无法反推公钥信息，因此，需要将私钥以及对应的公钥、地址一起存储。</p>
+<h3 id="2-3比特币钱包"><a href="#2-3比特币钱包" class="headerlink" title="2.3比特币钱包"></a>2.3比特币钱包</h3><p>比特币钱包要解决的核心问题是私钥管理，早期的方式是随机生成私钥池并一次一密，这当然是安全性很高的方案。但是对存储，导入导出备份带来了极大的挑战，毕竟私钥丢了谁也没有办法。改进的私钥管理办法将私钥链式管理起来了，见下图：</p>
+<p>生成链式结构的过程如下：</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash008.png" alt=""></p>
+<h2 id="3-区块链"><a href="#3-区块链" class="headerlink" title="3.区块链"></a>3.区块链</h2><p>区块链可以理解为数据结构概念中的链表（和线性表略有不同的是可能有分叉），这里我们只需要大致了解区块数据结构以及每一块大致的意思，这些结构信息将会在交易和挖矿部分进行详细讲解。<br>区块链可以理解为运行在去中心化网络中的，所有节点（挖矿节点）共同维护的交易数据库，这个数据库是以链式的形式组织交易数据的，每一个链表的块被称为区块或者block。</p>
+<h3 id="3-1-区块结构"><a href="#3-1-区块结构" class="headerlink" title="3.1 区块结构"></a>3.1 区块结构</h3><p>区块是一种被包含在公开账簿（区块链）里的聚合了交易信息的容器数据结构。它由一个包含元数据的区块头和紧跟其后的构成区块主体的一长串交易组成。</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash009.png" alt=""></p>
+<p>上表中的1-9应该是1-9个字节，否则会引起歧义。</p>
+<h3 id="3-2-区块头"><a href="#3-2-区块头" class="headerlink" title="3.2 区块头"></a>3.2 区块头</h3><p>区块头由三组区块元数据组成。首先是一组引用父区块哈希值的数据，这组元数据用于将该区块与区块链中前一区块相连接。第二组元数据，即难度、时间戳和nonce，与挖矿竞争相关。第三组元数据是merkle树根（一种用来有效地总结区块中所有交易的数据结构）。</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash010.png" alt=""></p>
+<p>Nonce、难度目标和时间戳会用于挖矿过程，Merkle根用来索引和组织该区块所有的交易信息，其结构见下一节。<br>因此区块头之间的连接大约像下图所示：</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash011.jpeg" alt=""></p>
+<p>从上图我们可以知道如何避免双重支付问题，因为收款人有办法对这笔支付之前的所有消息进行检索直至追溯到原始的挖矿区块，实际上比特币世界里的每一枚比特币都是被标记可溯源，双重支付是可以避免的。</p>
+<h3 id="3-3-Merkle-Tree"><a href="#3-3-Merkle-Tree" class="headerlink" title="3.3 Merkle Tree"></a>3.3 Merkle Tree</h3><p>Merkle Tree，是一种树（数据结构中所说的树），网上大都称为Merkle Hash Tree,这是因为 它所构造的Merkle Tree的所有节点都是Hash值。Merkle Tree具有以下特点：</p>
+<ol>
+<li>它是一种树，可以是二叉树，也可以多叉树，无论是几叉树，它都具有树结构的所有特点；</li>
+<li>Merkle树的叶子节点上的value，是由你指定的，这主要看你的设计了，如Merkle Hash Tree会将数据的Hash值作为叶子节点的值；<br>3 非叶子节点的value是根据它下面所有的叶子节点值，然后按照一定的算法计算而得出的。如Merkle Hash Tree的非叶子节点value的计算方法是将该节点的所有子节点进行组合，然后对组合结果进行hash计算所得出的hash value。<br>例如，下图就是一个Merkle Hash Tree形状，如果它是Merkle Hash Tree，则节点7的hash value必须是通过节点15、16上的value计算而得到.</li>
+</ol>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash012.png" alt=""></p>
+<p>在处理比对或验证的应用场景中时，特别是在分布式环境下进行比对或验证时，Merkle Tree会大大减少数据的传输量以及计算的复杂度。例如，就拿图一举例，假如是 15,16…….30是一个个数据块的hash值，我把这些数据从A传输到B，数据传输到B后，我想验证下传输到B上的数据的有效性型（验证数据是否在传输过程中发生变化），只需要验证A 和 B上所构造的Merkle<br>Tree的root节点值是否一致即可，如果一致，表示数据是有效的，传输过程中没有发生改变。假如在传输过程中，15对应的数据被人篡改，通过Merkle Tree很容易定位找到（因为此时，节点0,1,3,7,15对应的hash值都发生了变化）<br>需要解释的是交易数据是怎么构建成数的呢，其实很简单：首先将所有交易作为叶子节点，两两相邻分组（总的交易数量如果是奇数就把单个的那个复制一份），然后对每一对交易分别计算哈希并依此向上构建树直至根节点，如下图所示：</p>
+<h2 id="4-交易"><a href="#4-交易" class="headerlink" title="4.交易"></a>4.交易</h2><p>再次强调的是，比特币网络中流转的是交易信息，每个账户的余额是通过交易信息推算出来的，交易信息是双向的，有一个输入必定对应一个输出。</p>
+<h3 id="4-1交易输入输出"><a href="#4-1交易输入输出" class="headerlink" title="4.1交易输入输出"></a>4.1交易输入输出</h3><p>每一笔交易,out的总额应该等于in的总额。但是,在这个交易单里,只会有out的Value,没有in的Value,而是通过in的Pervious与index,追溯到上一个交易单的某一个out,获得Value。<br>一次send bitcoin,剩下的钱,应该out给自己,否则这个钱就丢了。<br>情况列举:<br>我有10个BTC,是某一次交易获得的,我要送给朋友A,10个BTC。这时候,有一个in,一个out。<br>我有10个BTC,是某一次交易获得的,我要送给朋友A,5个BTC,这时候,有一个in,两个out,一个指向朋友5个BTC,一个指向我自己,得到剩下的5个BTC。<br>我有10个BTC,是以前的两次交易获得的,我要送给朋友A,10个BTC,这时候,有两个in,一个out。<br>我有10个BTC,是以前的两次交易获得的,其中一次获得了6个BTC,另一次获得了4个BTC,我要送给我的朋友7个BTC,这时候,有两个in,两个out。<br>比特币交易的基本单位是未经使用的一个交易输出，简称UTXO。UTXO是不能再分割、被所有者锁住或记录于区块链中的并被整个网络识别成货币单位的一定量的比特币货币。这句话什么意思呢？比特币交易除了挖矿获取以外，都是零和的，因为区块链不维护余额信息也没有余额概念，区块链只有交易信息。举个例子，你有10个比特币现在需要支付2个出去，那么交易数据维护的是一个输入（未经使用的10个比特币）和2个输出（一个是2个币对应的地址），还有一个是8个币对应地址是你自己的地址。</p>
+<h3 id="4-2交易过程"><a href="#4-2交易过程" class="headerlink" title="4.2交易过程"></a>4.2交易过程</h3><p>交易的基本诉求，是付款人（payer）汇款给收款人（payee）。技术挑战是加密（cryptography），目的是不让第三者截获甚至篡改汇款金额。<br>下图解释了 Owner0 给 Owner1以及后续 汇款的交易机制，截图如下。</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash013.jpeg" alt=""></p>
+<ol>
+<li>Owner0 先查到 Owner1 的公钥。用 Owner1 的公钥（Public Key）把汇款详情加密。这样，只有 Owner1 本人用自己的私钥（Private Key），才能打开加了密的汇款详情。在图例中，没有画汇款详情。不过这个小小的叙述的疏忽无妨大雅。</li>
+<li>为了方便 Owner1 验证这笔汇款的确来自 Owner0，而不是别人，Owner0 发出的汇款单里，除了有加了密的汇款详情，还有 Owner0 的数字签名（Signature）。Owner1 拿到汇款时，为了验证这笔汇款的确来自 Owner0，他可以用 Owner0 的公钥，来验证汇款单中 Owner0 的数字签名。</li>
+<li>Owner0 发出汇款单时，汇款单不仅仅投递到 Owner1，而且还要广而告之，任何人只要愿意参与 BitCoin 审计，都可以收到全球所有人发出的所有汇款单。</li>
+<li>沿用 1、2、3 的原理，Owner1 给 Owner2 汇款，然后 Owner2 给 Owner3 汇款。BitCoin 通过 Hash 机制，把涉及同一枚 BitCoin 的所有汇款交易（Tranaction）串连起来，目的是为了追查重复付款（double spending）的欺诈行为。<br>单独来看交易创建过程：</li>
+</ol>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash014.png" alt=""></p>
+<p>收款方对交易进行验证：</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash015.png" alt=""></p>
+<h2 id="5-挖矿原理"><a href="#5-挖矿原理" class="headerlink" title="5.挖矿原理"></a>5.挖矿原理</h2><p>挖矿的本质意义是挖矿节点争夺记账权！主观上来说，挖矿节点获得了挖矿奖励及交易费，客观上来说，这保证了区块链按照特定规则持续稳定的被维护。<br>挖矿的具体实现就是在难度一定的情况下通过暴力双SHA256哈希运算获取满足难度taget的Nonce值，所谓的工作量证明就是无数次哈希运算穷举并比对的过程。<br>“挖矿”算法我们可以参考区块头结构解说如下：</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/hash016.png" alt=""></p>
+<ul>
+<li>第一步：找到区块版本号version。</li>
+</ul>
+<ul>
+<li>第二步：找到上一个区块的hash值（父区块哈希值）：prev_hash。</li>
+</ul>
+<ul>
+<li>第三步：输入记录交易的hash树的根节点hash值（Merkle根）：root_hash。</li>
+</ul>
+<ul>
+<li>第四步：更新的时间（时间戳）:time。</li>
+</ul>
+<ul>
+<li>第五步：全网当前难度（难度目标）:difficulty</li>
+</ul>
+<p>针对难度目标需要说明：<br>难度在区块中以“尾数-指数”的格式，编码并存储，这种格式称作“难度位”。这种编码的首字节表示指数，后面的3字节表示尾数(系数)。以区块277316为例，难度位的值为0x1903a30c，0x19是指数（exponent）的十六进制格式，后半部0x03a30c是系数（coefficient）。</p>
+<ul>
+<li>第六步：自己找一个随机数Nonce：这个就是反复试的部分，不断递增该数字并做哈希运算直到对应哈希值小于难度指定的taget值。</li>
+</ul>
+<p>把以上6个参数作为输入，做二次SHA256运算，形似于<br>SHA256(SHA256(version , prev_hash , root_hash , time , difficulty, random))<br>最终得到结果result。最后把结果result提交给系统，由系统判断这个计算结果是否有效（result&lt;target为有效)。若判定结果为有效，你就产生了一个新的区块，并会告知全网。<br>target通过difficulty可以计算得到：<br>target = coefficient <em> 2^(8 </em> (exponent – 3))<br>算法规定：一个新的区块的第一笔交易必须将特定数目的比特币发到某个地址，当然这个地址肯定会设成挖矿人自己的比特币地址，从而获得系统的比特币奖励。</p>
+<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6.总结"></a>6.总结</h2><p>比特币理论以密码学为支撑，构建了一个完备、安全、去中心化的数字货币体系，解决了数字资产所有权问题、双重支付问题、现实世界的通货膨胀问题甚至还预留了机制使得构建在资产转移之上的智能合同成为可能。比特币当然是伟大的创造，期待比特币有更好的未来。</p>
+<p>(文章内容来自网络）</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">BlockSafe Lab. </a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/06/25/见证隔离/" class="next-post btn btn-default" title='见证隔离'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">见证隔离</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzM5Ni8xMzkzMA">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-什么是隔离见证？"><span class="toc-text">1.什么是隔离见证？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-见证隔离SegWit如何缓解比特币扩容问题？"><span class="toc-text">2.见证隔离SegWit如何缓解比特币扩容问题？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-见证隔离为比特币带来什么好处？"><span class="toc-text">3. 见证隔离为比特币带来什么好处？</span></a></li></ol>
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<!--<a id="toc-btn">
+    <i class="fa fa-bars"></i>
+</a>-->
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017 BlockSafe Lab. All Rights Reserved.
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/js/search.js?rev=@@hash"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
