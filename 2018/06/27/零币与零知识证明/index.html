@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="BlockCamp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://blockcamp.net">
+    <!--SEO-->
+
+<meta name="description" content="һ��ѧϰ����ĥ����������"/>
+
+
+
+<meta name="keywords" content="�����������˼����ʲ�����ȫ"/>
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>Zcash(零币)与零知识证明 | BlockCamp</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="BlockCamp" type="application/atom+xml">
+
+
+    <link rel="icon" href="/logo01.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='BlockSafe Lab'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 区块链学习小栈 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/学习园地/"><i class="fa "></i>学习园地</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术文章/"><i class="fa "></i>技术文章</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/链海导航/"><i class="fa "></i>链海导航</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/下载区/"><i class="fa "></i>下载区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Zcash(零币)与零知识证明">
+            
+	            Zcash(零币)与零知识证明
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/学习园地">
+            学习园地
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/零币" title='零币'>
+                        零币
+                    </a>
+                
+                    <a href="/tags/Zcash" title='Zcash'>
+                        Zcash
+                    </a>
+                
+                    <a href="/tags/零知识证明" title='零知识证明'>
+                        零知识证明
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/06/27</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>Zcash（零币）是一种数字货币，它旨在创建一种真正匿名的交易方法。</p>
+<p>阻碍比特币成为电子货币的一个重要原因在于它的所有交易都是在公共区块链上可见的。因此，比特币的互换性一直备受争议。有些人或者公司 （主要是交易所）不会接受涉及某些地址的比特币。这样的交易审查与比特币的核心理念背道而驰。</p>
+<p>Zcash是希望缔造一种无须知道加密签名的输入输出就能做到验证的最新货币,    其实就是匿名交易。</p>
+<p>交易过程完全匿名是Zcash最大的亮点，正是这一点使得ZCash自提出以来便备受关注。ZCash匿名交易的实现依赖于一种叫做“零知识证明”的密码学手段。本文将通过打比方的手法，用通俗的语言，解释清楚ZCash的交易原理，以及零知识证明是如何运用到ZCash交易过程中的。</p>
+<p>本文的主角还是数字货币界最著名Alice和Bob。</p>
+<h2 id="一、从比特币说起"><a href="#一、从比特币说起" class="headerlink" title="一、从比特币说起"></a>一、从比特币说起</h2><p>直接讲解ZCash的交易过程可能会比较抽象。为了有助于理解，我们不妨先分析比特币，作为铺垫。</p>
+<p>我们先来打个比方说明比特币的转账原理。</p>
+<p>演示场景：Alice转1个比特币给Bob。</p>
+<p>转账前，Alice要事先准备1个比特币。为了方便理解，我们把Alice准备转出的这1个比特币看成一张面额为1个比特币的“支票”，如图1。</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/zec-001.png" alt=""><br>图1</p>
+<p>从这张“支票”中我们可以获取到如下信息：</p>
+<p>1.Alice确实拥有1个BTC。</p>
+<p>2.Alice使用私钥对这张支票签名，证明Alice拥有对这笔资产转账的权力。</p>
+<p>支票的面额和转账权都已经明确，Alice就可以给Bob转账了。转账的原理很简单，就是给Bob新建一张一样的“支票”，证明Bob拥有了1个比特币。同时撕掉Alice手中那张的“支票”，通过这“破旧”并“立新”的方式，实现资产所有权的转移。如图2。</p>
+<p> <img src="http://pawrksyv1.bkt.clouddn.com/zec-002.png" alt=""><br>图2</p>
+<p>以上逻辑其实不难理解，因为这和日常生活中的银行转账是一个道理。通过银行转账，我们在交易时不必对实物货币进行转移，而是以银行记账的方式，实现“资产所有权”的转移。比特币交易的过程实质上就是一个“资产所有权”的转移过程，转入比特币的那一方“新建”一份资产所有权，而转出方需要“销毁”原先的资产所有权，被销毁的那张“支票”永远不会再出现。</p>
+<h2 id="二、ZCash的转账原理"><a href="#二、ZCash的转账原理" class="headerlink" title="二、ZCash的转账原理"></a>二、ZCash的转账原理</h2><p>与比特币一样，ZCash的交易过程也是 “资产所有权”的转移。继续沿用前文“支票”的比方。</p>
+<p>演示场景：Alice转1个ZEC给Bob。</p>
+<p>转账前，Alice创建一张面额为1个ZEC的“支票”，如图3。</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/zec-003.png" alt=""></p>
+<p>图3</p>
+<p>能从该凭证中获取的信息：</p>
+<p>1.Alice确实拥有1个ZEC。</p>
+<p>2.Alice使用私钥对这张支票签名，证明Alice拥有对这笔资产转账的权力。</p>
+<p>3.这张“凭证”上多了一串随机数，用符号 r 表示。这串随机数的作用好比 “支票代号”，用来唯一识别该支票。Alice的“支票代号”为r1。</p>
+<p>明确以上信息，Alice就可以进行ZEC转账了。</p>
+<p>第一步:比特币一样，要先为Bob新建一张“支票”。Bob的支票代号（r2）与Alice的支<br>票代号（r1）不相同，如图4。</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/zec-004.png" alt=""></p>
+<p>图4</p>
+<p>第二步：新的“资产所有权”生成的同时，必须要想办法销毁原来的“资产所有权”。即必须想办法让Alice手中的“支票”失效。与比特币简单粗暴的“直接撕毁”不同，ZCash采用“备注作废”的手段，达到同样的效果。怎么理解呢？就是在不对原先“支票”作任何处理的前提下，新建一个作废文件列表，录入需要作废的“发票代号”。如图5，</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/zec-005.png" alt=""></p>
+<p>图5</p>
+<p>从上图可以看出，原先的Alice持有的支票仍旧存在，并没有消失，只是这张支票已经被记入“作废列表”。在确定资产所有权时要同时读取两个列表的信息，能确定Bob拥有资产所有权的判断方法是：作废列表中不存在Bob所持“支票”的代号。</p>
+<p>可是为什么要这样设计呢？其实这样设计的目的是为了在交易过程中运用 “零知识证明”。</p>
+<h2 id="三、零知识证明"><a href="#三、零知识证明" class="headerlink" title="三、零知识证明"></a>三、零知识证明</h2><p><strong>什么是零知识证明？</strong></p>
+<p>零知识证明 （被称为“zk-SNARK”）是实现Zcash的匿名特性的核心技术。“零知识证明”的定义是：证明者能够在不向验证者提供任何有用的信息的情况下，使验证者相信某个论断是正确的。举个简单的例子：</p>
+<p>A要向B证明自己拥有某个房间的钥匙，假设该房间只能用钥匙打开锁，而其他任何方<br>法都打不开。这时有2个方法：<br>　<br>（一）A把钥匙出示给B，B用这把钥匙打开该房间的锁，从而证明A拥有该房间的正确的钥匙。<br>　<br>（二）B确定该房间内有某一物体，A用自己拥有的钥匙打开该房间的门，然后把物体拿出来出示给B，从而证明自己确实拥有该房间的钥匙 。<br>　　<br>后面这个方法属于零知识证明。好处在于在整个证明的过程中，B始终不能看到钥匙的样子，从而避免了钥匙的泄露。</p>
+<p>那么零知识证明怎么运用到ZCash交易过程中呢？我们再回顾比特币和ZCash的例子。</p>
+<p>Alice要向Bob转一个单位的数字货币（BTC/ZEC），即Alice要向Bob转移一个单位的资产所有权。这时有以下两个方法：</p>
+<p>（一）比特币中的做法：Alice拥有一张1BTC的支票，要转账给Bob时，先给Bob新建一张1BTC的支票，同时当着Bob的面将自己原先的支票撕毁。</p>
+<p>（二）ZCash中的做法：Alice拥有一张1ZEC的支票，要转账给Bob时，先给Bob新建一张1ZEC的支票，然后在一张约定有效的作废列表中，记录下Alice的发票的代号，证明Alice的支票已经失效。</p>
+<p>ZCash的方法属于零知识证明。整个交易过程中，Bob并没有见过Alice的支票，但是还是实现了资产所有权的转移。在ZCash的整个交易系统中，Alice和Bob的交易还有其他见证者，即负责记录交易信息的矿工。同样道理，矿工也不必看到Alice的支票，只要能确定代号为r1的支票已经作废了就行。</p>
+<h2 id="四、ZCash完整的匿名交易系统"><a href="#四、ZCash完整的匿名交易系统" class="headerlink" title="四、ZCash完整的匿名交易系统"></a>四、ZCash完整的匿名交易系统</h2><p>有了上述铺垫，就可以进一步解释ZCash的匿名交易过程了。</p>
+<p>还是那个例子：Alice转1 个ZEC给Bob。这个例子中有涉及到的角色有转账双方Alice和Bob，以及记账者（矿工）。</p>
+<p>首先是Alice和Bob都有了一张支票，如图6。</p>
+<p> <img src="http://pawrksyv1.bkt.clouddn.com/zec-006.png" alt=""><br>图6</p>
+<p>这两张“支票”都是有效的。Alice的支票开始就存在于整个ZCash网络，Bob的支票在生成后也会被广播到全网。</p>
+<p>为了隐藏交易者信息，要对两张支票进行加密处理。在全网中存在的“支票”其实是这样子的，如图7。</p>
+<p>信息都是被加密的，可以通过拥有者的私钥解密</p>
+<p> <img src="http://pawrksyv1.bkt.clouddn.com/zec-007.png" alt=""><br>图7</p>
+<p>同时，因为资产只能有一份，所有矿工手里还有一个作废列表。Alice要同时广播自己的“发票代号”，录入作废列表中。发票代号也是加密的。所以矿工们能看到的信息其实是这样的。其中Alice的支票是原先存在的，Alice的支票代号r1和Bob的支票是在交易过程中被Alice广播的。如图8。</p>
+<p> <img src="http://pawrksyv1.bkt.clouddn.com/zec-008.png" alt=""><br>图8</p>
+<p>矿工们能获取的信息相当有限，但是这并不影响对矿工对交易有效性的判断。</p>
+<p>判断的逻辑相当简单：矿工拿到Alice给的支票代号r1，去作废列表中检索，假如作废列表中已经存在r1，则证明r1所对应的的支票早已失效；若作废列表中并不存在r1，则证明r1对应的支票仍旧有效，此时矿工把r1录入作废列表中，把新生成的支票录入支票列表中。所以记账的过程就是对原有支票登记失效，并存入现有支票的过程。</p>
+<p>在这个过程中，我们不难发现，每笔交易矿工能接收到的东西只有一个发票代号，和一张新的发票，而且这两样东西都是被加密的。所以矿工并不知道转账双方是谁，也不知道转账金额是多少。</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">BlockSafe Lab. </a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/06/26/什么是以太坊Gasper协议？/" class="next-post btn btn-default" title='什么是以太坊Gasper协议？'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">什么是以太坊Gasper协议？</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzM5Ni8xMzkzMA">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、从比特币说起"><span class="toc-text">一、从比特币说起</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、ZCash的转账原理"><span class="toc-text">二、ZCash的转账原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、零知识证明"><span class="toc-text">三、零知识证明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、ZCash完整的匿名交易系统"><span class="toc-text">四、ZCash完整的匿名交易系统</span></a></li></ol>
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<!--<a id="toc-btn">
+    <i class="fa fa-bars"></i>
+</a>-->
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017 BlockSafe Lab. All Rights Reserved.
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/js/search.js?rev=@@hash"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
