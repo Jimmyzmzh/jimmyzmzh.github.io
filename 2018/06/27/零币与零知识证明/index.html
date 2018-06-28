@@ -214,12 +214,12 @@
 <p>能从该凭证中获取的信息：</p>
 <p>1.Alice确实拥有1个ZEC。</p>
 <p>2.Alice使用私钥对这张支票签名，证明Alice拥有对这笔资产转账的权力。</p>
-<p>3.这张“凭证”上多了一串随机数，用符号 r 表示。这串随机数的作用好比 “支票代号”，用来唯一识别该支票。Alice的“支票代号”为r1。</p>
+<p>3.这张“凭证”上多了<strong>一串随机数</strong>，用符号 r 表示。这串随机数的作用好比 “支票代号”，用来唯一识别该支票。Alice的“支票代号”为r1。</p>
 <p>明确以上信息，Alice就可以进行ZEC转账了。</p>
 <p>第一步:比特币一样，要先为Bob新建一张“支票”。Bob的支票代号（r2）与Alice的支<br>票代号（r1）不相同，如图4。</p>
 <p><img src="http://pawrksyv1.bkt.clouddn.com/zec-004.png" alt=""></p>
 <p>图4</p>
-<p>第二步：新的“资产所有权”生成的同时，必须要想办法销毁原来的“资产所有权”。即必须想办法让Alice手中的“支票”失效。与比特币简单粗暴的“直接撕毁”不同，ZCash采用“备注作废”的手段，达到同样的效果。怎么理解呢？就是在不对原先“支票”作任何处理的前提下，新建一个作废文件列表，录入需要作废的“发票代号”。如图5，</p>
+<p>第二步：新的“资产所有权”生成的同时，必须要想办法销毁原来的“资产所有权”。即必须想办法让Alice手中的“支票”失效。与比特币简单粗暴的“直接撕毁”不同，ZCash采用“<strong>备注作废</strong>”的手段，达到同样的效果。怎么理解呢？就是在不对原先“支票”作任何处理的前提下，新建一个作废文件列表，录入需要作废的“发票代号”。如图5，</p>
 <p><img src="http://pawrksyv1.bkt.clouddn.com/zec-005.png" alt=""></p>
 <p>图5</p>
 <p>从上图可以看出，原先的Alice持有的支票仍旧存在，并没有消失，只是这张支票已经被记入“作废列表”。在确定资产所有权时要同时读取两个列表的信息，能确定Bob拥有资产所有权的判断方法是：作废列表中不存在Bob所持“支票”的代号。</p>
@@ -261,6 +261,11 @@
 </article>
 
 <div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/06/28/什么是IPFS？/" class="pre-post btn btn-default" title='什么是IPFS？'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">什么是IPFS？</span>
+        </a>
     
     
         <a href="/2018/06/26/什么是以太坊Gasper协议？/" class="next-post btn btn-default" title='什么是以太坊Gasper协议？'>
