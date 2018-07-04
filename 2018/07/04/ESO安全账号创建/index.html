@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="BlockCamp">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://blockcamp.net">
+    <!--SEO-->
+
+<meta name="description" content="һ��ѧϰ����ĥ����������"/>
+
+
+
+<meta name="keywords" content="�����������˼����ʲ�����ȫ"/>
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>ESO实战：创建一个EOS 安全账号（冷钱包） | BlockCamp</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="BlockCamp" type="application/atom+xml">
+
+
+    <link rel="icon" href="/logo01.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='BlockSafe Lab'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 区块链学习小栈 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/学习园地/"><i class="fa "></i>学习园地</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术文章/"><i class="fa "></i>技术文章</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/链海导航/"><i class="fa "></i>链海导航</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/下载区/"><i class="fa "></i>下载区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="ESO实战：创建一个EOS 安全账号（冷钱包）">
+            
+	            ESO实战：创建一个EOS 安全账号（冷钱包）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/学习园地">
+            学习园地
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/EOS" title='EOS'>
+                        EOS
+                    </a>
+                
+                    <a href="/tags/安全" title='安全'>
+                        安全
+                    </a>
+                
+                    <a href="/tags/冷钱包" title='冷钱包'>
+                        冷钱包
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/07/04</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>前段时间EOS 公链上线了，不少看好EOS 前景的投资者也开始考虑长期投资EOS 资产了（现在主要是EOS 代币）。</p>
+<p>EOS 的安全风险有很多。特别是很多在众筹期间参与EOS 映射的网友，他们的EOS 密钥都是在EOS 映射期间匆匆忙忙在网上产生的。大部分网友对EOS 的账号，密钥，钱包的概念已经之间的关系也没有来得及理解。这为EOS的资产安全管理带来了很多挑战。</p>
+<p>EOS 其实没有冷钱包的概念，代币EOS 由账号管理，所以EOS 的冷钱包其实就是一个安全账号。</p>
+<blockquote>
+<p>本文假设你已经参加过EOS 的映射，有了一个EOS 的账号（很多账号名都是g4开头的），但是账号的密钥是在网上在线产生的，有存在被偷窃的危险。如果你准备长期保存相当数量的EOS代币，希望有一个更加安全的账号。那么本文或许将对你有所帮助。</p>
+</blockquote>
+<p><strong>EOS安全账号创建的的关键点：</strong></p>
+<ol>
+<li>Owner /active两对密钥对（包括公钥和私钥）必须在离线状态下产生；</li>
+<li>私钥从产生那天开始，一直只保留在纸备份上面，不跟任何有网络连接或者平台上有接触；</li>
+<li>查询账号下的资产只通过网上工具，不在任何第三方钱包（包括麦子钱包或者imtoken） 内导入这两个私钥）;</li>
+<li>假设你的电脑和手机都有木马或病毒，也不能通过粘贴板，键盘记录，摄像头等设备偷取你的私钥。</li>
+<li>直到某一天，你需要动用这个账号里的资产时，将你保留在纸上的私钥导入任何钱包应用，你就可以立即发起交易。</li>
+</ol>
+<p><strong>这种EOS 安全账号合适哪些用户?</strong></p>
+<p>EOS 安全账号在导入钱包之前，无法发起交易，主要用途是用于长期保管EOS 代币，合适长期持币收藏的投资者，不合适交易型的短线投资人士。</p>
+<p>在制作一个EOS 钱包之前，最好先去了解一下EOS的密钥，账号与钱包三者的概念及其关系，这对于理解EOS 冷账号的制作很有好处。</p>
+<p><strong>制作EOS 安全账号主要由以下几个步骤：</strong></p>
+<ol>
+<li>安装EOS 套件，其中包括cleos, nodeos, keosd.</li>
+<li>使用cleos离线产生密钥对，手工抄录备份私钥；</li>
+<li>在Dapp World上查询新账号名是否可以；</li>
+<li>安装Scatter插件；</li>
+<li>使用公钥在网上创建EOS 新账号并确认。</li>
+</ol>
+<h2 id="安装EOSIO-套件"><a href="#安装EOSIO-套件" class="headerlink" title="安装EOSIO 套件"></a>安装EOSIO 套件</h2><p>以下是Ubuntu 系统下安装EOSIO 的步骤，其他平台请参考网上的教程。<br>官方指南：<a href="https://developers.eos.io/eosio-nodeos/docs/getting-the-code" target="_blank" rel="noopener">https://developers.eos.io/eosio-nodeos/docs/getting-the-code</a><br>打开终端界面：<br>git clone <a href="https://github.com/eosio/eos" target="_blank" rel="noopener">https://github.com/eosio/eos</a> –recursive   // 获得源码<br><img src="http://pawrksyv1.bkt.clouddn.com/eos01.png" alt=""><br>cd eos   //进入源码子目录<br>./build.sh ubuntu   //构建EOSIO套件<br> <img src="http://pawrksyv1.bkt.clouddn.com/eos02.png" alt=""><br>成功构建项目之后，进入eos\build\programs\cleos子目录，看看是否有cleos 可执行程序。<br> <img src="http://pawrksyv1.bkt.clouddn.com/eos03.png" alt=""><br>其实完成这个安装步骤后，已经安装了EOS 的套件，包括cleos, nodeos 和keosd, 但我们现在暂时只需要用到cleos.</p>
+<h2 id="获取密钥对"><a href="#获取密钥对" class="headerlink" title="获取密钥对"></a>获取密钥对</h2><p> 断开电脑的网络，关闭WIFI或拔出网线，在终端界面进入eos\build\programs\cleos子目录，执行以下命令 ./cleos create key, 即可产生一对密钥，再次执行同样的命令，再次产生另一对密钥。<br><img src="http://pawrksyv1.bkt.clouddn.com/eos04.png" alt=""> </p>
+<p>好了。现在两对密钥已经产生，不要立即拷贝到其他文件保存。</p>
+<ol>
+<li>先用纸笔把两对公钥和私钥（privatekey）抄到纸上，注意英文字母的大小写。建议连续抄两次；</li>
+<li>抄好私钥之后，用鼠标右键拷贝两个公钥（ publicKey）（注意：只拷贝公钥）到其他文件，可以是笔记本或者word,excel文档备用；将其中一个设为owner, 另一个设为active.<br><img src="http://pawrksyv1.bkt.clouddn.com/eos05.JPG" alt=""></li>
+<li>在纸备份的私钥上注明，哪个公钥是owner，哪个公钥是active. 纸备份应该再次誊写，注明产生日期，并留点空间用于加注账号信息。</li>
+<li>电脑关机重启，接上网线或者WIFI。</li>
+<li>离线产生密钥对的任务完成。</li>
+</ol>
+<p>以上步骤保证了密钥对是在离线的情况下产生，期间避免私钥拷进粘贴板，而且电脑重启后清空缓存信息。保证私钥不会暴露在任何电子媒体的接触下。</p>
+<h2 id="安装Scatter插件"><a href="#安装Scatter插件" class="headerlink" title="安装Scatter插件"></a>安装Scatter插件</h2><p>安装scatter插件需要用到科学上网工具。</p>
+<p>Scatter插件类似以太坊的metamask，是安装在浏览器上的一个插件钱包。</p>
+<p>官网 ： <a href="https://get-scatter.com/" target="_blank" rel="noopener">https://get-scatter.com/</a><br><img src="http://pawrksyv1.bkt.clouddn.com/scatter01.JPG" alt=""></p>
+<p>Scatter插件安装过程不是很困难。但要注意几点：<br>a.    由于天朝的政策，需要科学上网工具才能登陆Chrome市场；<br>b.    注意从Scatter官网开始安装插件，小心钓鱼网站套取你的私钥；<br>c.    由于Scatter是一个轻型钱包，创建账号需要你在EOS映射时备份的EOS 私钥；</p>
+<h2 id="到Dapp-World查询可用的账号名"><a href="#到Dapp-World查询可用的账号名" class="headerlink" title="到Dapp World查询可用的账号名"></a>到Dapp World查询可用的账号名</h2><p><a href="http://www.dappworld.com/api/v1/eos/account" target="_blank" rel="noopener">http://www.dappworld.com/api/v1/eos/account</a><br>我们这里以anameoffline为例子，查询它是否已经被注册。<br>很好，它是可用的！<br><img src="http://pawrksyv1.bkt.clouddn.com/accountname_check02.JPG" alt=""></p>
+<h2 id="到EOSTOOLKIT-IO创建新账号"><a href="#到EOSTOOLKIT-IO创建新账号" class="headerlink" title="到EOSTOOLKIT.IO创建新账号"></a>到EOSTOOLKIT.IO创建新账号</h2><p>EOSTOOLKIT的澳大利亚GenerEOS 旗下的EOS工具网站，为EOS 网友提供一些实用的EOS 工具，包括查找账号，创建账号已经账号管理，短账号名抢拍等工具。</p>
+<p>网站是： <a href="https://eostoolkit.io/" target="_blank" rel="noopener">https://eostoolkit.io/</a></p>
+<h3 id="导入旧账号，点击浏览器右上角的Scatter小图标，"><a href="#导入旧账号，点击浏览器右上角的Scatter小图标，" class="headerlink" title="导入旧账号，点击浏览器右上角的Scatter小图标，"></a>导入旧账号，点击浏览器右上角的Scatter小图标，</h3><p><img src="http://pawrksyv1.bkt.clouddn.com/scatter02.jpg" alt=""></p>
+<p>输入密码，</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/scatter03.JPG" alt=""></p>
+<p>解锁scatter.</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/scatter04.JPG" alt=""></p>
+<h3 id="点击屏幕左上角的“Attach-an-Account”-选择”Connect-Account”"><a href="#点击屏幕左上角的“Attach-an-Account”-选择”Connect-Account”" class="headerlink" title="点击屏幕左上角的“Attach an Account” ,选择”Connect Account”,"></a>点击屏幕左上角的“Attach an Account” ,选择”Connect Account”,</h3><p><img src="http://pawrksyv1.bkt.clouddn.com/EOStoolkit01.JPG" alt=""></p>
+<p>弹出确实窗口，点击“选择身份”，然后再点击“接受”。</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/EOStoolkit02.jpg" alt=""></p>
+<p>这样左上角“Attach an Account” 现在就变成了你的EOS 账号了。</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/EOStoolkit03.jpg" alt=""></p>
+<h3 id="点击“Create-Account”-进入账号创建界面，可以看到，“owner”栏已经填写好，是你的旧账号了。"><a href="#点击“Create-Account”-进入账号创建界面，可以看到，“owner”栏已经填写好，是你的旧账号了。" class="headerlink" title="点击“Create Account” 进入账号创建界面，可以看到，“owner”栏已经填写好，是你的旧账号了。"></a>点击“Create Account” 进入账号创建界面，可以看到，“owner”栏已经填写好，是你的旧账号了。</h3><p>其中新账号名和两个新公钥的栏目需要非常小心填写：</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/EOStoolkit06.jpg" alt=""></p>
+<p>A.    <strong>“New Name Account</strong>”, 填写你已经选好并确认还没有被其他人注册的账号名称<br>。再这里我们继续使用“anameoffline”这个名字作为例子。</p>
+<p>B.    “<strong>Owner Public Key</strong>”, 这里填写在之前生成好的两个公钥中owner那一个。可以用拷贝/粘贴工具，公钥很长，手填不方便。</p>
+<p>C.    “<strong>Active Public Key</strong>” 这里填写在之前生成好的两个公钥中active那一个。<br>（注意： 上面两个都是填写新账号的公钥，不是私钥，也不是旧账号的公钥）</p>
+<p>D.    “<strong>Net stack”/”CPU stack</strong>” 不用改，都是0.1. “<strong>RAM purchase</strong>” 默认是8192，我一般填3600就够了。</p>
+<p>E.    好了，再次检查所有填写的内容。如果没有问题就点击“<strong>CREATE</strong>”</p>
+<p>F.    弹出一个确认窗口，点击“接受” </p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/EOStoolkit07.jpg" alt=""></p>
+<h2 id="查询新账号"><a href="#查询新账号" class="headerlink" title="查询新账号"></a>查询新账号</h2><p>在成功创建好新的账号名之后，点,击账号搜索按键“Find Account”, 在左边“SEARCHACCOUNT”中填写<br>你的新的账号名，点击”SEARCH”, 就会出来你的账号信息。</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/EOStoolkit04.jpg" alt=""></p>
+<p>由于账号是空的，“Token Balance” 显示 No Balance. </p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/accountcheck01.jpg" alt=""></p>
+<p>点击下方的”Show JSON”, 将会显示账号的详细资料。</p>
+<p><img src="http://pawrksyv1.bkt.clouddn.com/EOStoolkit05.jpg" alt=""></p>
+<p>请你查看此账号的owner 和active 的“key” 值，是不是你自己的公钥对。如果正确，恭喜你，你的EOS 安全账号创建任务已经完毕！</p>
+<p>现在你可以往这个账号转入EOS 资产了。转入之后，你可以用网上的在线工具查询这个账号名下的资产，但在网络中任何地方，没有这个账号的私钥存在，包括你的手机，电脑。</p>
+<p>查询工具有很多，包括：</p>
+<p><a href="http://eosflare.io/" target="_blank" rel="noopener">http://eosflare.io/</a><br><a href="https://eostoolkit.io/search" target="_blank" rel="noopener">https://eostoolkit.io/search</a></p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">BlockSafe Lab. </a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/06/29/长铗：我所理解的区块链思维/" class="next-post btn btn-default" title='长铗：我所理解的区块链思维'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">长铗：我所理解的区块链思维</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzM5Ni8xMzkzMA">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装EOSIO-套件"><span class="toc-text">安装EOSIO 套件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取密钥对"><span class="toc-text">获取密钥对</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Scatter插件"><span class="toc-text">安装Scatter插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#到Dapp-World查询可用的账号名"><span class="toc-text">到Dapp World查询可用的账号名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#到EOSTOOLKIT-IO创建新账号"><span class="toc-text">到EOSTOOLKIT.IO创建新账号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导入旧账号，点击浏览器右上角的Scatter小图标，"><span class="toc-text">导入旧账号，点击浏览器右上角的Scatter小图标，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#点击屏幕左上角的“Attach-an-Account”-选择”Connect-Account”"><span class="toc-text">点击屏幕左上角的“Attach an Account” ,选择”Connect Account”,</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#点击“Create-Account”-进入账号创建界面，可以看到，“owner”栏已经填写好，是你的旧账号了。"><span class="toc-text">点击“Create Account” 进入账号创建界面，可以看到，“owner”栏已经填写好，是你的旧账号了。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询新账号"><span class="toc-text">查询新账号</span></a></li></ol>
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<!--<a id="toc-btn">
+    <i class="fa fa-bars"></i>
+</a>-->
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017 BlockSafe Lab. All Rights Reserved.
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/js/search.js?rev=@@hash"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
